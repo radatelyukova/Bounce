@@ -7,7 +7,7 @@
 #   26.09.2018  Created by:  rada
 ################################################################################
 from tkinter import *
-#from game import *
+from game import *
 
 class GameGUI():
     def __init__(self, master, game):
@@ -18,9 +18,12 @@ class GameGUI():
         self.master.winfo_toplevel().title("Отбей мячик")   # Workaround
         self.master.geometry(self.center(master))
         self.master.attributes('-topmost', True)
-        self.master.config(background='lightblue')
+        self.master.config(background='blue')
 
-    # Widgets
+        # Widgets
+        self.canvas = Canvas(master, width=500, height=500, bg='lightblue')
+        self.canvas.pack()
+        self.ball = Ball(self.canvas, 'blue')
     
     # Centers the window on the screen
     def center(self, master): 
