@@ -14,9 +14,8 @@ class GameGUI():
         self.master = master
         
         # Default attributes
-        self.master.title = "Отбей мячик"
-#        self.master.winfo_toplevel().title("Отбей мячик")
-        print(self.master.wm_title())
+#        self.master.title = "Отбей мячик"                  # Bug: not working
+        self.master.winfo_toplevel().title("Отбей мячик")   # Workaround
         self.master.geometry(self.center(master))
         self.master.attributes('-topmost', True)
         self.master.config(background='lightblue')
