@@ -5,14 +5,14 @@
 #
 #   26.09.2018  Created by: rada
 ################################################################################
-import time
 from application import *
+from my_lib.logbook import *
 
 if __name__ == "__main__":
-    print(time.strftime("%Y-%m-%d %H:%M:%S %Z", time.localtime(time.time())), 'Game starts')
-
+    Logbook.log('Game starts')
+    
     app = Application()
     
     app.root.mainloop()
     
-    print(time.strftime("%Y-%m-%d %H:%M:%S %Z", time.localtime(time.time())), 'Game is over')
+    Logbook.log('Game is over')
